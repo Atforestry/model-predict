@@ -4,4 +4,6 @@ services:
     build: .
     image: "atforestry/${IMAGE_NAME}"
     ports:
-      - "8001:8001" 
+      - "8000:8000" 
+    volumes:
+      - ./src:/app/src

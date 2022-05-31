@@ -13,6 +13,6 @@ COPY ./src ./src
 COPY ./model ./model
 COPY ./start.sh .
 
-EXPOSE 8001
+EXPOSE 8000
 
 CMD ["./start.sh"]
