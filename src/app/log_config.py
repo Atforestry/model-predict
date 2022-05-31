@@ -17,6 +17,6 @@ log_config = {
         },
     },
     "loggers": {
-        "capstone": {"handlers": ["default"], "level": "INFO"},
+        "model_predict": {"handlers": ["default"], "level": "INFO"},
     },
 }
