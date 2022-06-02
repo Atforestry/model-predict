@@ -6,3 +6,5 @@ tensorflow
 opencv-python
 Pillow
 matplotlib
+dvc
+dvc[gs]
