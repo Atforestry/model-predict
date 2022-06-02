@@ -12,7 +12,7 @@ This is the footprint we can use to start any service based on python from. It's
 Before running the build command you should run DVC pull to fetch the latest model:
 
 ```
-dvc pull -r model-tracjer-gcp
+dvc pull -r model-tracker-gcp
 ```
 
 ## Make Commands
