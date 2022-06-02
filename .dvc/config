@@ -1,2 +1,6 @@
+[core]
+    remote = model-tracker-gcp
 ['remote "model-tracker"']
     url = gdrive://1KxwM_eb6sldbo7ZyHgeDXhCGP3k64wjv
+['remote "model-tracker-gcp"']
+    url = gs://atforestry-model-tracker/model
