@@ -8,13 +8,14 @@ This is the footprint we can use to start any service based on python from. It's
 * Review Dockerfile to select the most appropriate image. Now we are using Python:3 (pretty slim!)
 * Use make <COMMAND> to work with this repository:
 
-# DVC
+## DVC
 Before running the build command you should run DVC pull to fetch the latest model:
 
 ```
 dvc pull -r model-tracjer-gcp
 ```
 
+## Make Commands
 ```
 make build
 ```
