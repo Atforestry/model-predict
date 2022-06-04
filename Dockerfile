@@ -11,6 +11,10 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY ./src ./src
 COPY ./model ./model
+COPY ./.dvc ./.dvc
+COPY ./.git ./.git
+
+COPY .dvcignore ./
 
 COPY ./start.sh .
 
