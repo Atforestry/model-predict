@@ -8,13 +8,8 @@ This is the footprint we can use to start any service based on python from. It's
 * Review Dockerfile to select the most appropriate image. Now we are using Python:3 (pretty slim!)
 * Use make <COMMAND> to work with this repository:
 
-## DVC
-Before running the build command you should run DVC pull to fetch the latest model:
-
-```
-pip install 'dvc[gs]'
-cd model && dvc pull -r model-tracker-gcp
-```
+## Set Up
+Before building the docker container, make sure to include in root the mlops-3-c0ecd4f26897.json file with the GCP credentials.
 
 Remember that gcloud needs to be authorized with the proper service account.
 
