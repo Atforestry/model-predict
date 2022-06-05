@@ -9,9 +9,12 @@ This is the footprint we can use to start any service based on python from. It's
 * Use make <COMMAND> to work with this repository:
 
 ## Set Up
-Before building the docker container, make sure to include in root the mlops-3-c0ecd4f26897.json file with the GCP credentials.
+In order to run this service locally, first authenticate in gcloud with the appropriate service account credentials, install DVC and download the latest model version.
 
-Remember that gcloud needs to be authorized with the proper service account.
+```
+pip install 'dvc[gs]'
+dvc pull -r model-tracker-gcp
+```
 
 ## Make Commands
 ```
