@@ -12,8 +12,11 @@ This is the footprint we can use to start any service based on python from. It's
 Before running the build command you should run DVC pull to fetch the latest model:
 
 ```
-dvc pull -r model-tracker-gcp
+pip install 'dvc[gs]'
+cd model && dvc pull -r model-tracker-gcp
 ```
+
+Remember that gcloud needs to be authorized with the proper service account.
 
 ## Make Commands
 ```

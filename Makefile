@@ -31,3 +31,4 @@ auth:
 	gcloud auth configure-docker us-central1-docker.pkg.dev
 	gcloud container clusters get-credentials atforestry-cluster --region us-central1
 
+
