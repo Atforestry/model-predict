@@ -56,7 +56,7 @@ jobs:
     # Download the latest version of the model
     - name: Model
       run: |-
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ./google.json
+        echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' > ./google.json
         gcloud --quiet auth activate-service-account 411650743689-compute@developer.gserviceaccount.com --key-file=./google.json
         pip install 'dvc[gs]'
         dvc pull -r model-tracker-gcp -vv
