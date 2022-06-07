@@ -1,9 +1,9 @@
-include .env
+export IMAGE_NAME=model-predict
 
 build:
 	docker build . -t atforestry/$(IMAGE_NAME)
 
-run:
+run start:
 	docker-compose up -d --build
 	docker-compose logs -f --tail=20
 

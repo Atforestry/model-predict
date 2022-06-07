@@ -1,11 +1,9 @@
 version: "3.9"
 services:
-  service:
+  model-predict:
     build: .
-    image: "atforestry/${IMAGE_NAME}"
+    image: "atforestry/model-predict"
     ports:
       - "8000:8000" 
     volumes:
       - ./src:/app/src
-    env_file:
-      - ./.env
