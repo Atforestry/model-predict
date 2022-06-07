@@ -40,6 +40,9 @@ jobs:
       with:
         service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         project_id: ${{ secrets.GKE_PROJECT }}
+    
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'        
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
