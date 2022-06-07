@@ -25,7 +25,7 @@ def perform_healthcheck():
     return {'healthcheck': 'Ok'}
 
 @app.get("/")
-async def main():
+def main():
     content = """
 <body>
 <p>Hello World !</p>
@@ -34,7 +34,7 @@ async def main():
     return HTMLResponse(content=content)
 
 @app.post("/v1/predict_image_label")
-async def get_prediction(file: UploadFile = File(...)):
-    image_file = await file.read()
+def get_prediction(file: UploadFile = File(...)):
+    image_file = file.read()
     prediction = predict_land_cover(image_file)
     return prediction
