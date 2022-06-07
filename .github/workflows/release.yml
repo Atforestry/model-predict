@@ -57,6 +57,7 @@ jobs:
     - name: Model
       run: |-
         echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ./google.json
+        cat ./google.json
         export GOOGLE_APPLICATION_CREDENTIALS='./google.json'
         pip install 'dvc[gs]'
         dvc pull -r model-tracker-gcp 
