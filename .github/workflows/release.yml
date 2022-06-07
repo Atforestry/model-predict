@@ -56,14 +56,8 @@ jobs:
     # Download the latest version of the model
     - name: Model
       run: |-
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ./google.json
-        pip install virtualenv
-        virtualenv venv
-        source venv/bin/activate
-        pip install 'dvc[gs]'
-        export GOOGLE_APPLICATION_CREDENTIALS='./google.json'
-        dvc pull -r model-tracker-gcp -vv
-
+        gsutil cp gs://atforestry-model-tracker/model/vgg16_trained.h5 ./model
+        
     # Build the Docker image
     - name: Build
       run: |-
