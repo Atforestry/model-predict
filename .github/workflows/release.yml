@@ -56,9 +56,12 @@ jobs:
     # Download the latest version of the model
     - name: Model
       run: |-
-        echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' > ./google.json
-        gcloud --quiet auth activate-service-account 411650743689-compute@developer.gserviceaccount.com --key-file=./google.json
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ./google.json
+        pip install virtualenv
+        virtualenv venv
+        source venv/bin/activate
         pip install 'dvc[gs]'
+        export GOOGLE_APPLICATION_CREDENTIALS='./google.json'
         dvc pull -r model-tracker-gcp -vv
 
     # Build the Docker image
