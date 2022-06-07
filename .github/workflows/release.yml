@@ -59,8 +59,9 @@ jobs:
     # Download the latest version of the model
     - name: Model
       run: |-
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > google.json
         pip install 'dvc[gs]'
-        dvc pull -r model-tracker-gcp
+        dvc pull -r model-tracker-gcp credentialpath google.json
 
     # Build the Docker image
     - name: Build
