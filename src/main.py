@@ -32,10 +32,9 @@ def main():
     return HTMLResponse(content=content)
 
 @app.post("/v1/predict_image_label")
-def get_prediction(file: UploadFile = File(...)):
+async def get_prediction(file: UploadFile = File(...)):
     logger.info('Predicting image')
     logger.info('Reading image')
-    image_file = file.read()
-    logger.info('Predicting image')
+    image_file = await file.read()
     prediction = predict_land_cover(image_file)
     return prediction
