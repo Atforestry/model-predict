@@ -12,6 +12,7 @@ from .app.log_config import log_config
 dictConfig(log_config)
 logger = logging.getLogger("model_predict") # should be this name unless you change it in log_config.py
 
+logger.info('Starting Fast API')
 app = FastAPI()
 
 
@@ -22,6 +23,7 @@ def perform_healthcheck():
 
 @app.get("/")
 def main():
+    logger.info('Accessing root')
     content = """
 <body>
 <p>Hello World !</p>
@@ -31,6 +33,9 @@ def main():
 
 @app.post("/v1/predict_image_label")
 def get_prediction(file: UploadFile = File(...)):
+    logger.info('Predicting image')
+    logger.info('Reading image')
     image_file = file.read()
+    logger.info('Predicting image')
     prediction = predict_land_cover(image_file)
     return prediction
