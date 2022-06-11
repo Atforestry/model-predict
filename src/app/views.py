@@ -6,13 +6,6 @@ from PIL import Image
 import matplotlib.image as mpimg
 from io import BytesIO
 
-import logging
-from logging.config import dictConfig
-from log_config import log_config 
-
-dictConfig(log_config)
-logger = logging.getLogger("model_predict") # should be this name unless you change it in log_config.py
-
 model = get_model()
 
 labels = ['slash_burn',
