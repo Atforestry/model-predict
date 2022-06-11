@@ -12,11 +12,7 @@ from .app.log_config import log_config
 dictConfig(log_config)
 logger = logging.getLogger("model_predict") # should be this name unless you change it in log_config.py
 
-app = FastAPI(
-    title='Atforesty Inference API',
-    description='This web interface allows the user to load an image predict cover land type',
-    version="1.0.0"
-)
+app = FastAPI()
 
 
 @app.get('/healthcheck', status_code=status.HTTP_200_OK)
