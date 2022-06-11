@@ -3,7 +3,7 @@ sys.path.insert(1, './src')
 
 from fastapi import FastAPI, status, File, UploadFile
 from fastapi.responses import HTMLResponse
-from .app.views import predict_land_cover
+#from .app.views import predict_land_cover
 
 import logging
 from logging.config import dictConfig
